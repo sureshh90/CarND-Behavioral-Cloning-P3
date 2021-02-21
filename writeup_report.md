@@ -69,38 +69,34 @@ In addition, the region of interest in an image is also cropped out using a Crop
 
 The summary of the model is the given below. For detailed information about the model please refer [1].
 
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-lambda_1 (Lambda)            (None, 160, 320, 3)       0         
-_________________________________________________________________
-cropping2d_1 (Cropping2D)    (None, 65, 320, 3)        0         
-_________________________________________________________________
-conv2d_1 (Conv2D)            (None, 31, 158, 24)       1824      
-_________________________________________________________________
-conv2d_2 (Conv2D)            (None, 14, 77, 36)        21636     
-_________________________________________________________________
-conv2d_3 (Conv2D)            (None, 5, 37, 48)         43248     
-_________________________________________________________________
-conv2d_4 (Conv2D)            (None, 3, 35, 64)         27712     
-_________________________________________________________________
-conv2d_5 (Conv2D)            (None, 1, 33, 64)         36928     
-_________________________________________________________________
-flatten_1 (Flatten)          (None, 2112)              0         
-_________________________________________________________________
-dense_1 (Dense)              (None, 100)               211300    
-_________________________________________________________________
-dense_2 (Dense)              (None, 50)                5050      
-_________________________________________________________________
-dense_3 (Dense)              (None, 10)                510       
-_________________________________________________________________
-dense_4 (Dense)              (None, 1)                 11        
-=================================================================
+| Layer (type)          |     Description / Output Shape	    		| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 160,320,3 RGB image  							| 
+|                       |                                               | 
+| Lambda (Normalization)| 160,320,3 RGB image  							| 
+| Cropping2D         	| 65,320,3 RGB image  							|
+|                       |                                               | 
+| Convolution 3x3     	| 1x1 stride, valid padding, Output 31x158x24 	|
+| RELU					|												|
+| Convolution 3x3     	| 1x1 stride, valid padding, Output 14x77x36 	|
+| RELU					|												|
+| Convolution 3x3     	| 1x1 stride, valid padding, Output 5x37x48 	|
+| RELU					|												|
+| Convolution 5x5     	| 2x2 stride, valid padding, Output 3x35x64 	|
+| RELU					|												|
+| Convolution 5x5     	| 2x2 stride, valid padding, Output 1x33x64 	|
+| RELU					|												|
+|                       |                                               |
+| Flatten       		| Output 2112 									|
+| Fully Connected		| Input 2112 Outputs 100						|
+| Fully Connected		| Input 100 Outputs 50							|
+| Fully Connected		| Input 50 Outputs 10							|
+| Fully Connected		| Input 10 Outputs 1							|
+| 						|												|
+ 
 Total params: 348,219
 Trainable params: 348,219
 Non-trainable params: 0
-_________________________________________________________________
-
 
 #### 2. Attempts to reduce overfitting in the model
 
@@ -235,7 +231,7 @@ The project could be extended by adding the following features.
 
 ### References:
 
-[1] End-to-End Deep Learning for Self-Driving Cars: https://developer.nvidia.com/blog/deep-learning-self-driving-cars/
+[1] Link: [End-to-End Deep Learning for Self-Driving Cars](https://developer.nvidia.com/blog/deep-learning-self-driving-cars/)
 [2] The lecture material on Stochastic Gradient Descent.
 [3] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
 [4] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
