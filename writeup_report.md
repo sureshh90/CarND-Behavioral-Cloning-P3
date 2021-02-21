@@ -231,7 +231,7 @@ The project could be extended by adding the following features.
 
 ### References:
 
-[1] Link: [End-to-End Deep Learning for Self-Driving Cars](https://developer.nvidia.com/blog/deep-learning-self-driving-cars/)
-[2] The lecture material on Stochastic Gradient Descent.
-[3] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
-[4] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
+* [1] Link: [End-to-End Deep Learning for Self-Driving Cars](https://developer.nvidia.com/blog/deep-learning-self-driving-cars/)
+* [2] The lecture material on Stochastic Gradient Descent.
+* [3] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
+* [4] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
